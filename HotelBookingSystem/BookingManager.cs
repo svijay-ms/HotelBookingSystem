@@ -48,20 +48,17 @@ namespace HotelBookingSystem
             {
                 lock (threadLock)
                 {
+                    if (!roomList.Any(rm => rm == room))
+                    {
+                        throw new InvalidOperationException("Room " + room + " is not valid!");
+                    }
+
                     if (roomsBooked == null)
                     {
                         roomsBooked = new Dictionary<string, string>();
                     }
 
-                    var isValidRoomId = roomList.Any(rm => rm == room);
-                    var FormattedDate = date.ToString("ddMMyyyy");
-                    var key = string.Format("{0}_{1}", room, FormattedDate);
-
-                    if (!isValidRoomId)
-                    {
-                        throw new InvalidOperationException("Room " + room + " is not valid!");
-                    }
-
+                    var key = string.Format("{0}_{1}", room, date.ToString("ddMMyyyy"));
                     if (roomsBooked.ContainsKey(key))
                     {
                         throw new InvalidOperationException("Room " + room + " is already booked");
