@@ -1,5 +1,5 @@
 # HotelBookingSystem
-IhsMarket
+
 Hotel Bookings Problem
 
 A simple hotel booking system keeps track of the rooms in a hotel. A guest can book a room for
