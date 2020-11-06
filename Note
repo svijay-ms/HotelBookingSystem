@@ -1,0 +1,10 @@
+As requested I have done the Hotel Booking System
+
+In the program class file I have created two methods to demonstrate with and without thread safe call to make sure the BookingManager implementation support both scenarios.
+Also these two methods can test separately or together. 
+
+Then I have done the couple of unit tests to make sure the logic does support for all possible scenarios.
+
+As mentioned in the requirements, I didn't use any persistence object for storing booking status. Just used Dictionary in BookManager class itself.
+
+I'm happy to brief if there any clarification or conflict in the implementation. Thanks.
